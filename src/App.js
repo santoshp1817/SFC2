@@ -1,26 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Autocomplete from "react-google-autocomplete";
+import SimpleMap from './SimpleMap';
+import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 
+import './Table'
+import ButtonAppBar from './components/AppBar';
 function App() {
+
+  // const [value, setValue] = useState('');
+  // const [geoDetails, setGeoDetails] = useState({
+  //   lat: '',
+  //   lng: ''
+  // })
+
+  // useEffect(() => {
+  //   window.addEventListener('install', (event) => {
+  //     console.log('service worker installed', event);
+  //   })
+  //   if (value) {
+  //     geocodeByAddress(value.label)
+  //       .then(results => getLatLng(results[0]))
+  //       .then(({ lat, lng }) => {
+  //         console.log('Successfully got latitude and longitude', { lat, lng })
+  //         setGeoDetails({
+  //           ...geoDetails,
+  //           lat,
+  //           lng,
+  //         })
+  //       }
+
+  //       );
+  //   }
+
+  // }, [value])
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <ButtonAppBar />
+
+
+    </>
+
   );
 }
 
 export default App;
+
