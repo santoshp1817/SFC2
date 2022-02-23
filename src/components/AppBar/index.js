@@ -29,6 +29,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import logo from '../../assets/3m.svg'
+import VedioPlayer from "../VedioPlayer";
 // import Logo from "../../assets/logo.svg";
 
 
@@ -380,7 +381,11 @@ export default function ButtonAppBar({ data }) {
                 })}
             >
                 <Home />
+
+
+
             </main>
+
         </div>
     );
 }

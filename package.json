@@ -27,6 +27,7 @@
     "react-google-autocomplete": "^2.6.1",
     "react-google-places-autocomplete": "^3.3.2",
     "react-inlinesvg": "^2.3.0",
+    "react-player": "^2.9.0",
     "react-scripts": "5.0.0",
     "sass": "^1.49.8",
     "styled-components": "^5.3.3",

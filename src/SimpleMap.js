@@ -22,6 +22,7 @@ const places = [
     alarm: 'no'
   },
 
+
 ]
 export default function SimpleMap({ value, geoDetails }) {
   const [showTable, setShowTable] = useState(false);
@@ -65,7 +66,9 @@ export default function SimpleMap({ value, geoDetails }) {
         ))
         }
       </GoogleMapReact>
-      {showTable ? <BasicTable nodeData={nodeData} /> : <h2 style={{ display: 'flex', justifyContent: 'center' }}>Search & Select any FCM node to view its details</h2>}
+      <h3 style={{ display: 'flex', justifyContent: 'center' }}>Search & Select any FCM node to view its details</h3>
+
+      {showTable && <BasicTable nodeData={nodeData} />}
     </>
   )
 }

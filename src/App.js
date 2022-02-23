@@ -5,7 +5,7 @@ import Autocomplete from "react-google-autocomplete";
 import SimpleMap from './SimpleMap';
 import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-
+// import VedioPlayer from "./components/VedioPlayer";
 import './Table'
 import ButtonAppBar from './components/AppBar';
 function App() {
@@ -43,7 +43,12 @@ function App() {
   return (
     <>
 
-      <ButtonAppBar />
+      <div >
+        <ButtonAppBar />
+      </div>
+
+
+
 
 
     </>
