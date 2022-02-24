@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import logo from './logo.svg';
-import plm from '../../assets/plm.mp4'
-// import './App.css';
-import Autocomplete from "react-google-autocomplete";
 import SimpleMap from '../../SimpleMap';
 import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
@@ -39,7 +35,7 @@ export default function Home() {
         <div style={{ marginTop: 64, border: '2px solid blue' }}>
 
           <GooglePlacesAutocomplete
-            apiKey={``}
+            apiKey={`AIzaSyD3ggD8up3GhF-bPYrxIJKxXe4EUQbj6-s`}
             selectProps={{
               value,
               onChange: setValue,
