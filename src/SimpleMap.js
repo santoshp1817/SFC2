@@ -39,7 +39,7 @@ export default function SimpleMap({ value, geoDetails }) {
     <>
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: `` }}
+        bootstrapURLKeys={{ key: `AIzaSyD3ggD8up3GhF-bPYrxIJKxXe4EUQbj6-s` }}
         center={{
           lat: geoDetails.lat,
           lng: geoDetails.lng

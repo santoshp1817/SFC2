@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 import Home from "../Home";
 import SpeedIcon from '@mui/icons-material/Speed';
 import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
@@ -19,26 +17,12 @@ import {
     Typography,
     Divider,
     ListItem,
-    Collapse,
-    Chip,
-    Avatar,
     IconButton,
-    Tooltip,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import logo from '../../assets/3m.svg'
-import VedioPlayer from "../VedioPlayer";
-// import Logo from "../../assets/logo.svg";
-
-
-// import { useDispatch, useSelector } from "react-redux";
-// import { changeTheme } from "../../redux";
-
-// import backgroundDark from "../../assets/navBackgroundDark.jpg";
-// import backgroundLight from "../../assets/navBackgroundLight.jpg";
-// import { dark } from "../../ui/palettes";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -198,20 +182,6 @@ export default function ButtonAppBar({ data }) {
     const [open, setOpen] = useState(false);
     const [openQuickLink, setOpenQuickLink] = useState(false);
     const [openHelp, setOpenHelp] = useState(false);
-    const [openSnack, setOpenSnack] = useState(false);
-    const [logOutMessage, setLogOutMessage] = useState('');
-    const [snackBarSeverity, setSnackBarSeverity] = useState('')
-
-
-    const handleOpenQuickLinkClick = () => {
-        setOpen(true);
-        setOpenQuickLink(!openQuickLink);
-    };
-
-    const handleOpenHelpClick = () => {
-        setOpen(true);
-        setOpenHelp(!openHelp);
-    };
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -226,18 +196,7 @@ export default function ButtonAppBar({ data }) {
 
 
     data = data === "" ? "No ID" : data;
-    let avatar = "hello".toUpperCase()[0];
 
-    function Alert(props) {
-        return <MuiAlert elevation={6} variant="filled" {...props} />;
-    }
-
-
-    const handleLogout = () => {
-
-
-
-    }
 
 
     return (
@@ -250,14 +209,7 @@ export default function ButtonAppBar({ data }) {
                     [classes.appBarShift]: open,
                 })}
             >
-                {/* <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'right' }} open={openSnack}
-                    // autoHideDuration={3000} 
-                    onClose={() => { setOpenSnack(false) }
-                    }>
-                    <Alert severity={snackBarSeverity}>
-                        {logOutMessage}
-                    </Alert>
-                </Snackbar> */}
+
 
                 <Toolbar className={classes.backGround}>
                     <IconButton
@@ -311,7 +263,7 @@ export default function ButtonAppBar({ data }) {
                 <List>
                     <ListItem
                         button
-                        key={"Quick Links"}
+                        key={"Dashboard"}
                     // onClick={handleOpenQuickLinkClick}
                     >
                         <ListItemIcon className={classes.whiteLabel}>
@@ -327,7 +279,7 @@ export default function ButtonAppBar({ data }) {
                     <Divider />
                     <ListItem
                         button
-                        key={"Quick Links"}
+                        key={"Alarms"}
                     // onClick={handleOpenQuickLinkClick}
                     >
                         <ListItemIcon className={classes.whiteLabel}>
@@ -342,7 +294,7 @@ export default function ButtonAppBar({ data }) {
                     <Divider />
                     <ListItem
                         button
-                        key={"Quick Links"}
+                        key={"Analytics"}
                     // onClick={handleOpenQuickLinkClick}
                     >
                         <ListItemIcon className={classes.whiteLabel}>
@@ -357,7 +309,7 @@ export default function ButtonAppBar({ data }) {
                     <Divider />
                     <ListItem
                         button
-                        key={"Quick Links"}
+                        key={"Devices"}
                     // onClick={handleOpenQuickLinkClick}
                     >
                         <ListItemIcon className={classes.whiteLabel}>
