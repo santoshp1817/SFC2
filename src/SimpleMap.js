@@ -39,7 +39,7 @@ export default function SimpleMap({ value, geoDetails }) {
     <>
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: `AIzaSyD3ggD8up3GhF-bPYrxIJKxXe4EUQbj6-s` }}
+        bootstrapURLKeys={{ key: `` }}
         center={{
           lat: geoDetails.lat,
           lng: geoDetails.lng
@@ -68,7 +68,7 @@ export default function SimpleMap({ value, geoDetails }) {
       </GoogleMapReact>
       <h3 style={{ display: 'flex', justifyContent: 'center' }}>Search & Select any FCM node to view its details</h3>
 
-      {showTable && <BasicTable nodeData={nodeData} />}
+      {showTable && <div style={{ marginLeft: -2, marginRight: -1.5 }}><BasicTable nodeData={nodeData} /> </div>}
     </>
   )
 }
