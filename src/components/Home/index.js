@@ -35,7 +35,7 @@ export default function Home() {
         <div style={{ marginTop: 64, border: '2px solid blue' }}>
 
           <GooglePlacesAutocomplete
-            apiKey={`AIzaSyD3ggD8up3GhF-bPYrxIJKxXe4EUQbj6-s`}
+            apiKey={`AIzaSyAUmLsOJO84LFmlEL1Tc0_yQmS4gRNq24A`}
             selectProps={{
               value,
               onChange: setValue,

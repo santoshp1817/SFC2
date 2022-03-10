@@ -1,28 +1,34 @@
 import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react';
-import AnyReactComponent from './AnyReactComponent';
+import AnyReactComponent from './components/AnyReactComponent/AnyReactComponent';
 import BasicTable from './Table';
 // import { GoogleMap, Marker } from "react-google-maps"
 const places = [
   {
-    lat: '12.9656106',
-    lng: '77.5761364',
-    label: 'A',
+    lat: '44.9206673',
+    lng: '-92.961875',
+    label: 'Windgate Rd',
     name: 'node 1',
     noise: 'yes',
     alarm: 'yes'
 
   },
   {
-    lat: '12.9697059',
-    lng: '77.5842332',
-    label: 'B',
+    lat: '44.9214834',
+    lng: '-92.957287',
+    label: 'Leann Dr',
     name: 'node 2',
     noise: 'no',
     alarm: 'no'
   },
-
-
+  {
+    lat: '44.9215549',
+    lng: '-92.9844015',
+    label: 'Century Ave S',
+    name: 'node 2',
+    noise: 'no',
+    alarm: 'no'
+  },
 ]
 export default function SimpleMap({ value, geoDetails }) {
   const [showTable, setShowTable] = useState(false);
@@ -39,7 +45,7 @@ export default function SimpleMap({ value, geoDetails }) {
     <>
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: `AIzaSyD3ggD8up3GhF-bPYrxIJKxXe4EUQbj6-s` }}
+        bootstrapURLKeys={{ key: `AIzaSyAUmLsOJO84LFmlEL1Tc0_yQmS4gRNq24A` }}
         center={{
           lat: geoDetails.lat,
           lng: geoDetails.lng

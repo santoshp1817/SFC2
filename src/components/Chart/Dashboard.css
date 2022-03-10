@@ -1,0 +1,33 @@
+/* .Abcd{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    background-color: gray;
+
+}
+
+.Abcd h2{
+    color:rgb(236, 19, 19);
+} */
+/* *{
+    color: rgb(185, 185, 204);
+} */
+/* .barchart{
+    width: 30%;
+    height: 50%;
+} */
+
+.chartHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:90
+}
+
+.chartHeading button {
+  margin: 0 1em;
+}

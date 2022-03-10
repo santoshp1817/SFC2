@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,14 +7,40 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // import TableHeaderCell from '@mui/material/TableHeaderCell'
 // import Paper from '@mui/material/Paper';
-import sound from "./assets/sound.png";
+import sound from "../../assets/sound.png";
+import PopUpModal from '../PopUpModal';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import { IconButton } from '@mui/material';
+export default function DashboardTableComp({ nodeData, places, handlePlacesCallback, setNodeData }) {
+  const [open, setOpen] = useState(false)
+  const [modalHeading, setModalHeading] = useState('')
+  const handleCloseModal = () => {
+    setOpen(false)
+  }
+  const [showChartInModal, setShowChartInModal] = useState(true)
+  const handleAlarmClick = (node) => {
+    setShowChartInModal(false)
 
-export default function BasicTable({ nodeData }) {
-  console.log('nd', nodeData)
+    setModalHeading('Acknowledged')
+    console.log('clicked', node)
+    const temp = [...places]
+    const res = temp.filter(data => data.id === node.id).map(item => ({
+
+      ...item,
+      alarm: 'no'
+    }))
+    console.log('res', res)
+    setNodeData(res)
+    setOpen(true)
+  }
+  const handleChartIcon = () => {
+    setOpen(true)
+    setModalHeading('')
+    setShowChartInModal(true)
+  }
   return (
-    <>
-
-      <TableContainer sx={{ marginLeft: -8 }} >
+    <div style={{ marginTop: 320, marginLeft: 9 }}>
+      <TableContainer sx={{ marginLeft: -0.50 }} >
         <Table sx={{ border: '2px solid black' }} aria-label="simple table" size='large'>
           <TableHead >
             <TableRow sx={{
@@ -34,10 +60,11 @@ export default function BasicTable({ nodeData }) {
                 width: '100%',
                 backgroundColor: "lightBlue",
                 display: 'flex',
-                justifyContent: 'flex-end',
+                justifyContent: 'right',
                 flexDirection: 'row',
                 height: 80,
                 marginTop: -2,
+                // marginLeft: 50
 
 
               }}> <h3 style={{
@@ -58,7 +85,7 @@ export default function BasicTable({ nodeData }) {
 
 
             <TableRow
-              key={nodeData?.name}
+              key={nodeData[0]?.name}
 
             >
 
@@ -81,7 +108,7 @@ export default function BasicTable({ nodeData }) {
                 width: 120,
 
 
-              }}>{nodeData?.name}</TableCell>
+              }}>{nodeData[0]?.name}</TableCell>
 
             </TableRow>
 
@@ -106,7 +133,7 @@ export default function BasicTable({ nodeData }) {
                 width: 120,
 
 
-              }}>{nodeData?.noise}<img src={sound} alt="3M" width='50' height='50' /></TableCell>
+              }}>{nodeData[0]?.noise}<span style={{ cursor: 'pointer', float: 'inline-end' }}><img onClick={() => handleAlarmClick(nodeData[0])} src={sound} alt="3M" width='50' height='45' /><IconButton onClick={handleChartIcon} sx={{ marginBottom: 2.5 }}><BarChartIcon /></IconButton></span></TableCell>
             </TableRow>
 
             <TableRow>
@@ -130,7 +157,7 @@ export default function BasicTable({ nodeData }) {
                 width: 120,
 
 
-              }}>{nodeData?.alarm}</TableCell>
+              }}>{nodeData[0]?.alarm}</TableCell>
 
 
 
@@ -139,8 +166,8 @@ export default function BasicTable({ nodeData }) {
 
           </TableBody>
         </Table>
+        {open && <PopUpModal open={open} handleCloseModal={handleCloseModal} modalHeading={modalHeading} showChartInModal={showChartInModal} />}
       </TableContainer >
-    </>
-
+    </div >
   )
 }
