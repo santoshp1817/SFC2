@@ -23,14 +23,22 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
 
     setModalHeading('Acknowledged')
     console.log('clicked', node)
-    const temp = [...places]
+    let temp = [...places]
     const res = temp.filter(data => data.id === node.id).map(item => ({
 
       ...item,
-      alarm: 'no'
+      alarm: 'no',
+      color: 'green'
     }))
     console.log('res', res)
     setNodeData(res)
+    temp = [...places]
+    const placesRes = temp.map(item => ({
+
+      ...item,
+      color: item.id === node.id ? 'green' : item.color
+    }))
+    handlePlacesCallback(placesRes)
     setOpen(true)
   }
   const handleChartIcon = () => {
@@ -39,7 +47,7 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
     setShowChartInModal(true)
   }
   return (
-    <div style={{ marginTop: 320, marginLeft: 9 }}>
+    <div style={{ marginTop: 150, marginLeft: 9, position: 'relative' }}>
       <TableContainer sx={{ marginLeft: -0.50 }} >
         <Table sx={{ border: '2px solid black' }} aria-label="simple table" size='large'>
           <TableHead >
@@ -69,6 +77,7 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
 
               }}> <h3 style={{
                 color: 'white',
+                paddingLeft: 80
 
               }}>FPC Workcenter Data</h3></TableCell>
               <TableCell sx={{
@@ -129,11 +138,12 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
                 borderRight: "2px solid black",
                 backgroundColor: "#DBE6EC",
                 fontSize: "1.1rem",
-                height: 60,
+                height: 40,
                 width: 120,
+                // display: 'flex'
 
 
-              }}>{nodeData[0]?.noise}<span style={{ cursor: 'pointer', float: 'inline-end' }}><img onClick={() => handleAlarmClick(nodeData[0])} src={sound} alt="3M" width='50' height='45' /><IconButton onClick={handleChartIcon} sx={{ marginBottom: 2.5 }}><BarChartIcon /></IconButton></span></TableCell>
+              }}>{nodeData[0]?.noise}<span style={{ cursor: 'pointer', display: 'flex', marginTop: -30, paddingLeft: 50 }}><span style={{ margin: 0 }} className={nodeData[0]?.color} onClick={() => handleAlarmClick(nodeData[0])} ></span><IconButton onClick={handleChartIcon} sx={{ marginBottom: 2.5, paddingLeft: 2 }}><BarChartIcon /></IconButton></span></TableCell>
             </TableRow>
 
             <TableRow>

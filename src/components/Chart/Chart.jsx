@@ -32,7 +32,7 @@ const Chart = ({ barChart, label, Data, chartHeading }) => {
       xAxes: {
         title: {
           display: true,
-          text: 'Calendar month',
+          text: 'Hours',
           font: {
             size: 12,
           },

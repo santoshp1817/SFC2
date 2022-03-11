@@ -11,8 +11,36 @@ const Analytics = () => {
   const [barChart, setBarChart] = useState(true);
 
   const [chart, setChart] = useState({
-    label: ['January', 'Feburary', 'March', 'April', 'May', 'june'],
-    data: [65, 45, 123, 42, 43, 15],
+    label: [
+      '1 ',
+      '2',
+      '3',
+      '4',
+      '1 ',
+      '2',
+      '3',
+      '4',
+      '1 ',
+      '2',
+      '3',
+      '4',
+      '1 ',
+      '2',
+      '3',
+      '4',
+      '1 ',
+      '2',
+      '3',
+      '4',
+      '1 ',
+      '2',
+      '3',
+      '4',
+    ],
+    data: [
+      65, 45, 123, 42, 65, 45, 123, 42, 65, 45, 123, 42, 65, 45, 123, 42, 65,
+      45, 123, 42, 65, 45, 123, 42,
+    ],
   });
 
   const handleBarGraph = () => {
