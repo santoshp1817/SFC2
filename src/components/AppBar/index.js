@@ -26,7 +26,8 @@ import logo from '../../assets/3m.svg';
 import { Link } from 'react-router-dom';
 // import { useParams, useLocation } from "react-router-dom";
 import Dashboard from '../Dashboard';
-import Analytics from '../Chart/Dashboard';
+import Analytics from '../overview/Dashboard'
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -312,6 +313,40 @@ export default function ButtonAppBar({ data }) {
             />
           </ListItem>
           <Divider />
+          <ListItem
+            button
+            key={'Alarms'}
+            // onClick={handleOpenQuickLinkClick}
+            onClick={() => setShowComp('Alarms')}
+          >
+            <ListItemIcon className={classes.whiteLabel}>
+              <IconButton>
+                <AccessAlarmIcon />
+              </IconButton>
+            </ListItemIcon>
+            <ListItemText
+              className={classes.whiteLabel}
+              primary={'Alarms'}
+            />
+          </ListItem>
+          <Divider />
+          <ListItem
+            button
+            key={'Devices'}
+            // onClick={handleOpenQuickLinkClick}
+            onClick={() => setShowComp('Devices')}
+          >
+            <ListItemIcon className={classes.whiteLabel}>
+              <IconButton>
+                <DevicesIcon />
+              </IconButton>
+            </ListItemIcon>
+            <ListItemText
+              className={classes.whiteLabel}
+              primary={'Devices'}
+            />
+          </ListItem>
+          <Divider />
         </List>
       </Drawer>
       <main
@@ -322,6 +357,7 @@ export default function ButtonAppBar({ data }) {
         {/* {initial && location.pathname === '/home' ? <Home /> : location.pathname === '/dashboard' ? <Dashboard /> : <Analytics />} */}
         {/* <Dashboard /> */}
         {showComp === 'Home' ? <Home /> : showComp === 'Dashboard' ? <Dashboard /> : <Analytics />}
+        {/* {showComp === 'Dashboard' ? <Dashboard /> : <Analytics />} */}
       </main>
     </div>
   );

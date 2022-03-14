@@ -1,0 +1,723 @@
+/* Make materialize */
+:root {
+    --appbarHeight: 4rem;
+    --sideNavWidth: 16%;
+  }
+  /* Also change height of submenuwrapper */
+  .b-shadow {
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
+      var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  }
+  
+  .p-em-st {
+    padding: 0.8em;
+  }
+  
+  .p-em-upload {
+    padding: 0.4em 0.8em 0.2em 0.8em;
+  }
+  
+  .scrollable200 {
+    height: 200;
+    overflow-y: scroll;
+    /* -ms-overflow-style: none;
+    scrollbar-width: none; */
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  /* .scrollable200::-webkit-scrollbar {
+    display: none;
+  } */
+  
+  .topBarsHeight {
+    min-height: var(--appbarHeight);
+  }
+  
+  .dashboardPageWrapper {
+    display: flex;
+  }
+  .sidenavBarWrapper {
+    width: var(--sideNavWidth);
+    position: fixed;
+    top: 0;
+  }
+  
+  .dashboardContentWrapper {
+    /* flex-grow: 1; */
+    position: fixed;
+    /* left: var(--sideNavWidth); */
+    top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .analyticsContentWrapper {
+    flex-grow: 1; 
+     position: fixed;
+    left: var(--sideNavWidth);
+    top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1; 
+  }
+  
+  .sidenavBarWrapper .brandBar {
+    background-color: #192d3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 15px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  }
+  
+  .brandBar .image {
+    flex-grow: 1;
+  }
+  
+  .brandBar .toogleMenu {
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .appBarWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+  }
+  
+  .appBarLeftTools {
+    flex-grow: 1;
+  }
+  
+  .userAuthBox {
+    display: flex;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .userAuthBox:hover {
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .buttonIcon {
+    margin-right: 0.7em;
+  }
+  
+  .userAndTools {
+    display: flex;
+  }
+  
+  .userAndTools .userAuthInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0.5em;
+  }
+  
+  .userAndTools .userAuthInfo div {
+    line-height: 1em;
+  }
+  
+  .userAvatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .userAvatar img {
+    width: 100%;
+    object-fit: contain;
+  }
+  /* ItemButtons Group */
+  .iconButtonsGroup {
+    display: flex;
+  }
+  
+  .iconButtonsGroupItem {
+    color: rgba(0, 0, 0, 0.54);
+    width: 2em;
+    height: 2em;
+    font-size: 1.2em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .iconButtonsGroupItem:hover {
+    background-color: rgb(206, 206, 206);
+  }
+  /* Item Button Group */
+  
+  /* sidebar */
+  .userLeftInfo {
+    background-color: #192d3e;
+    color: white;
+    min-height: 7em;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .userLeftInfo .boldText {
+    color: white;
+  }
+  
+  .userLeftAvatar {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .userLeftAvatar img {
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .userLeftAvatarWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .userLeftAvatarBorder {
+    position: absolute;
+    top: -3.2em;
+    width: 5.6em;
+    height: 5.6em;
+    border-radius: 50%;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .userLeftWrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--appbarHeight));
+    /* min-height: 100vh; */
+    position: fixed;
+    /* top: calc(100% - 4em); */
+    /* top: 0; */
+    width: var(--sideNavWidth);
+    bottom: 0;
+    background-color: #121212;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .sidenavMenus {
+    /* background-color: #121212; */
+    padding-top: 3em;
+    color: white;
+  }
+  
+  /* .sidenavMenusBox {
+    
+  } */
+  
+  .menusGroup {
+    padding-bottom: 70px;
+  }
+  
+  .menusGroupHeading {
+    font-size: 0.76em;
+  }
+  
+  .menusGroupHeading,
+  .menuItem {
+    padding: 5px 10px 5px 20px;
+    width: 95%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .menuItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .menuItemActive {
+    background-color: white;
+    color: black;
+  }
+  
+  .menuItemActive:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .submenus .menuItem {
+    padding-left: 3.1em;
+  }
+  
+  .submenus a:hover {
+    color: white;
+  }
+  .mainMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mainMenu .menuText {
+    flex-grow: 1;
+  }
+  .menuIcon {
+    margin-right: 1em;
+  }
+  
+  .activeMenu {
+    background-color: #61dafb;
+    color: black;
+  }
+  .activeMenu:hover {
+    background-color: #61dafb;
+    color: black;
+  }
+  
+  .submenus {
+    /* height: auto; */
+    display: contents;
+    /* visibility: visible; */
+    /* transition: height 1s ease-out; */
+  }
+  
+  .hideSubmenus {
+    /* visibility: hidden;
+    height: 0px; */
+    display: none;
+  
+    /* transition: height 1s ease-out; */
+  }
+  
+  /* Sidebar */
+  
+  /* dashboard footer */
+  
+  .dashboardFooterWrapper {
+    padding: 1em;
+    background-color: #142635;
+    color: white;
+    display: flex;
+  }
+  
+  .dashboardFooterWrapper p:first-child {
+    flex-grow: 1;
+  }
+  /* dashboardFooter */
+  
+  /* Dashboard content */
+  .dashboardContent {
+    background-color: #f1f1f1;
+    padding: 1em 0em 1em 1em;
+    width: 100%;
+  }
+  
+  .contentPageHeader {
+    background-color: #142635;
+    color: white;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* DAshboard Content */
+  
+  /* Amalytics Box */
+  
+  .analyticsBoxesWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  .analyticsBox {
+    background-color: white;
+    width: 14%;
+    margin: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0.8em;
+    padding: 2em 1em;
+  }
+  .analyticsBoxCharts {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0.5em;
+    /* margin-left: 0.5em;
+    margin-right: 10px;
+    margin-top: 0.5em; */
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0.8em;
+    padding: 2em 1em;
+  }
+  
+  .analyticsBox p {
+    margin: 0;
+  }
+  .lowercase {
+    text-transform: capitalize;
+  }
+  
+  .analyticsBoxName {
+    color: grey;
+    font-size: 0.8em;
+  }
+  
+  .analyticsBoxNumber {
+    font-size: 2.4em;
+  }
+  
+  .analyticsBoxDesc {
+    color: gray;
+    font-size: 0.7em;
+  }
+  
+  .analyticsBox:nth-child(5n),
+  .analyticsBox:first {
+    margin-left: 0;
+  }
+  /* Analytics Box */
+  
+  table input[type='checkbox'] {
+    background: #fff;
+  }
+  /* Table */
+  .simpleTable {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.4em;
+  }
+  
+  .simpleTable th {
+    background-color: #f6f7f9;
+  }
+  
+  .simpleTable tr:hover {
+    background-color: rgb(243, 243, 243);
+  }
+  /* Table */
+  
+  /* Complex table  */
+  .complexTable {
+    background-color: white;
+  }
+  
+  .complexTable th {
+    background-color: rgb(241, 241, 241);
+  }
+  
+  .tableFooter {
+    background-color: white;
+    display: flex;
+    padding: 1em 1em 0em 1em;
+    border-top: 1px solid #f6f7f9;
+    border-bottom-right-radius: 0.8em;
+    border-bottom-left-radius: 0.8em;
+  }
+  
+  .tableFooter .selectedInformation {
+    flex-grow: 1;
+  }
+  
+  .tableFooter .selectedInformation svg {
+    margin-right: 10px;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .complexTableHeader {
+    background-color: white;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+    padding: 1em;
+  }
+  
+  .complexTableHeader form {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  
+  .complexTableHeader button {
+    color: white;
+  }
+  
+  .tableSortIcon {
+    margin-left: 1em;
+    color: grey;
+  }
+  
+  .ct-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Complex table */
+  
+  .stockIconItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stockIconItem .stockIcon {
+    font-size: 1.4em;
+  }
+  
+  .stockIconItem .colorGreen {
+    color: green;
+  }
+  
+  .stockIconItem .colorRed {
+    color: red;
+  }
+  
+  .dialogForm {
+    width: 100%;
+    /* margin-top: 1em; */
+  }
+  
+  .dialogForm .dialogFormChild,
+  .dialogForm .dialogFormchild {
+    width: 100%;
+    margin: 0.4em 0em 1em 0em;
+  }
+  
+  .input-desc {
+    color: #666;
+  }
+  
+  .dialogForm .dialogFormChild div {
+    width: 100%;
+    /* margin-bottom: 0.5em; */
+  }
+  
+  .autocompleteForm {
+    margin-bottom: 18px;
+  }
+  
+  /* Input Type File */
+  .inputTypeFileContainer {
+    margin: 0;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  .inputTypeFileThumbnailWrapper {
+    width: 40% !important;
+  }
+  
+  .fileInputLabel {
+    width: 90%;
+  }
+  
+  .fileInputLabel span {
+    font-size: 10px;
+  }
+  
+  .fileInput {
+    width: 100%;
+  }
+  
+  .inputTypeButton {
+    width: 100% !important;
+  }
+  
+  .fileNameDisplay {
+    font-size: 0.8em;
+    letter-spacing: 0.0001em;
+  }
+  
+  .dashboardContent {
+    flex-grow: 1;
+  }
+  
+  .MyPaper {
+    padding: 1em;
+  }
+  
+  .simpleResponsiveForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .simpleResponsiveForm div {
+    flex-grow: 1;
+    margin-bottom: 0.6em;
+  }
+  
+  .checkboxItem {
+    display: block;
+    margin-bottom: -15px;
+  }
+  
+  .ckeEditor {
+    height: 300px;
+  }
+  
+  .ckeEditorContainer {
+    margin-bottom: 1em;
+  }
+  
+  .draftJsContainer {
+    border: 1px solid grey;
+    line-height: 8px;
+  }
+  
+  .myTabs {
+    text-align: left;
+    width: 30%;
+  }
+  .autoCompleteForm {
+    display: flex;
+  }
+  .autoCompleteInput {
+    flex-grow: 1;
+    margin-top: 0.5em;
+    margin-right: 1em;
+  }
+  .autoCompleteFormButtonCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .autoCompleteFormButton {
+    height: 3.5em;
+    margin-top: 16px;
+  }
+  
+  .chipsContainer {
+    margin-top: 0.7em;
+  }
+  
+  .TabItemButton span {
+    align-items: flex-start;
+  }
+  
+  .tabInputGroup {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.6em;
+  }
+  
+  .tabPanel {
+    width: 100%;
+  }
+  
+  .tabInputLeftLebel {
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+  .tabInputLeftLebel p {
+    margin: 0;
+  }
+  
+  .selectInput {
+    width: 100%;
+  }
+  
+  .defaultPaper {
+    margin-bottom: 1em;
+  }
+  
+  .tabInputHorizontalGroup {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* .tabInputHorizontalGroup div {
+    width: 28%;
+  } */
+  
+  .tabInputHorizontalGroup div div {
+    width: 90%;
+  }
+  
+  .imgUploadComponent {
+    display: flex;
+  }
+  
+  /* LOGIN PAGE */
+  .adminLoginWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdefeb;
+    height: 100%;
+  }
+  
+  .adminLoginContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .adminLoginContainer .adminLoginBox {
+    flex-grow: 1;
+  }
+  
+  .adminLoginBox {
+    background-color: white;
+    padding: 2em;
+    margin-top: 0.7em;
+  }
+  /* LOGIN PAGE */
+  
+  .displayStaticImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -4px 7px 0px 0px;
+  }
+  
+  .displayStaticImage img {
+    width: 50px;
+  }
+  
+  .box-item-wrapper {
+    display: flex;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 01em 0em;
+    padding: 1em; */
+    width: 100%;
+    align-items: center;
+  }
+  .box-item-content {
+    flex-grow: 1;
+  }
+  
+  .box-table-item-title {
+    font-weight: 900;
+  }
+  
+  .box-table-item-type {
+    font-size: 12px;
+  }
+  
+  .color-grey {
+    color: rgb(173, 172, 172);
+  }
+  

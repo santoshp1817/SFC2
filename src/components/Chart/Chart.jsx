@@ -54,12 +54,12 @@ const Chart = ({ barChart, label, Data, chartHeading }) => {
   return (
     <div
       style={{
-        height: '50vh',
-        width: '48vw',
+        height: '100%',
+        width: '45vw',
         // display: 'inline-flex',
         // marginBottom: '10px',
         // marginRight: '5px',
-        margin: 30,
+        // margin: 30,
       }}
     >
       {barChart ? (

@@ -5,7 +5,7 @@ import ShowChartIcon from '@material-ui/icons/ShowChart';
 
 import './Dashboard.css';
 
-const Analytics = () => {
+const DashboardChart = () => {
   const [showBar, setShowBar] = useState(true);
 
   const [barChart, setBarChart] = useState(true);
@@ -75,18 +75,7 @@ const Analytics = () => {
           chartHeading='Noise chart in decibles'
         />
       ) : null}
-
-      {/* {showBar ? (
-          <Chart barChart={barChart} label={chart.label} Data={chart.data} />
-        ) : null}
-        {showBar ? (
-          <Chart barChart={barChart} label={chart.label} Data={chart.data} />
-        ) : null}
-        {showBar ? (
-          <Chart barChart={barChart} label={chart.label} Data={chart.data} />
-        ) : null} */}
-      {/* </div> */}
     </>
   );
 };
-export default Analytics;
+export default DashboardChart;

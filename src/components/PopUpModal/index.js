@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Dashboard from '../Dashboard';
-import Analytics from '../Chart/Dashboard';
+import DashboardChart from '../Chart/DashboardChart';
 
 const style = {
   position: 'absolute',
@@ -52,7 +52,7 @@ export default function PopUpModal({ open, handleCloseModal, modalHeading, showC
           <Typography sx={{ display: 'flex', justifyContent: 'center' }} id='modal-modal-title' variant='h6' component='h2'>
             {modalHeading}
           </Typography>
-          {showChartInModal && <Analytics />}
+          {showChartInModal && <DashboardChart />}
 
 
         </Box>
