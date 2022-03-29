@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react';
 import AnyReactComponent from './components/AnyReactComponent/AnyReactComponent';
 import BasicTable from './Table';
+import { googleApiKey } from './userConfig';
 // import { GoogleMap, Marker } from "react-google-maps"
 const places = [
   {
@@ -45,7 +46,7 @@ export default function SimpleMap({ value, geoDetails }) {
     <>
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: `` }}
+        bootstrapURLKeys={{ key: googleApiKey }}
         center={{
           lat: geoDetails.lat,
           lng: geoDetails.lng

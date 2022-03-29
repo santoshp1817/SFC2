@@ -3,6 +3,7 @@ import SimpleMap from '../../SimpleMap';
 import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import VedioPlayer from '../VedioPlayer';
+import { googleApiKey } from '../../userConfig';
 export default function Home() {
   const [value, setValue] = useState('');
   const [geoDetails, setGeoDetails] = useState({
@@ -35,7 +36,7 @@ export default function Home() {
         <div style={{ marginTop: 64, border: '2px solid blue' }}>
 
           <GooglePlacesAutocomplete
-            apiKey={``}
+            apiKey={googleApiKey}
             selectProps={{
               value,
               onChange: setValue,

@@ -120,3 +120,5 @@ export const dashboardData = [
     65, 45, 123, 42, 65, 45, 123, 42, 65, 45, 123, 42, 65, 45, 123, 42, 65,
     45, 123, 42, 65, 45, 123, 42,
 ]
+
+export const googleApiKey = ``

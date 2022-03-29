@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 // import TableHeaderCell from '@mui/material/TableHeaderCell'
 // import Paper from '@mui/material/Paper';
 import { Grid } from '@material-ui/core';
-
+import PopUpModal from '../PopUpModal';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import { IconButton } from '@mui/material';
 import DashboardChart from '../Chart/DashboardChart';
@@ -192,7 +192,7 @@ export default function MiniTableAndChart({ nodeData, places, handlePlacesCallba
 
             </TableBody>
           </Table>
-          {/* {open && <PopUpModal open={open} handleCloseModal={handleCloseModal} modalHeading={modalHeading} showChartInModal={showChartInModal} />} */}
+          {open && <PopUpModal open={open} handleCloseModal={handleCloseModal} modalHeading={modalHeading} showChartInModal={showChartInModal} />}
         </TableContainer >
 
 
