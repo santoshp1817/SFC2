@@ -42,7 +42,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 //   setMessage
 // } from '../../../../redux/loader/loderActions';
 
-import DashboardChart from '../Chart/DashboardChart';
+import AnalyticsChart from '../Chart/AnalyticsChart';
 
 // const pdfConverter = require('jspdf');
 import './Analytics.css'
@@ -766,7 +766,7 @@ function Analytics() {
                       Total Sales
                     </Typography>
 
-                    <DashboardChart />
+                    <AnalyticsChart />
                   </div>
                 ) : null}
               </>
@@ -782,7 +782,7 @@ function Analytics() {
                     >
                       Net Sales
                     </Typography>
-                    <DashboardChart />
+                    <AnalyticsChart />
                   </div>
                 ) : null}
               </>
@@ -800,7 +800,7 @@ function Analytics() {
                     >
                       Orders
                     </Typography>
-                    <DashboardChart />
+                    <AnalyticsChart />
                   </div>
                 ) : null}
               </>
@@ -816,7 +816,7 @@ function Analytics() {
                     >
                       Average Order Value
                     </Typography>
-                    {/* <DashboardChart /> */}
+                    {/* <AnalyticsChart /> */}
                     <Line options={options} data={data} />;
                   </div>
                 ) : null}

@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <div style={{ marginLeft: 10, backgroundColor: 'black' }}>
-        {/* <div style={{ marginTop: 64, border: '2px solid blue' }}>
+        <div style={{ marginTop: 64, border: '2px solid blue' }}>
 
           <GooglePlacesAutocomplete
             apiKey={``}
@@ -41,7 +41,7 @@ export default function Home() {
               onChange: setValue,
             }}
           />
-        </div> */}
+        </div>
 
 
         <div style={{ width: '100%', height: '400px', border: '2px solid blue', borderTop: 'none' }}>
@@ -50,7 +50,7 @@ export default function Home() {
           </div>}
         </div>
       </div>
-      {!geoDetails.lat && <h3 style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>Search & Select any FCM node to view its details</h3>}
+      {!geoDetails.lat && <h3 style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}></h3>}
     </>
   )
 }

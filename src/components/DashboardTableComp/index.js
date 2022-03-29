@@ -11,7 +11,7 @@ import sound from "../../assets/sound.png";
 import PopUpModal from '../PopUpModal';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import { IconButton } from '@mui/material';
-export default function DashboardTableComp({ nodeData, places, handlePlacesCallback, setNodeData }) {
+export default function DashboardTableComp({ nodeData, places, handlePlacesCallback, setNodeData, handleShowTableCallback }) {
   const [open, setOpen] = useState(false)
   const [modalHeading, setModalHeading] = useState('')
   const handleCloseModal = () => {
@@ -32,12 +32,13 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
     }))
     console.log('res', res)
     setNodeData(res)
-    temp = [...places]
-    const placesRes = temp.map(item => ({
+    // temp = [...places]
+    // const placesRes = temp.map(item => ({
 
-      ...item,
-      color: item.id === node.id ? 'green' : item.color
-    }))
+    //   ...item,
+    //   color: item.id === node.id ? 'green' : item.color
+    // }))
+    const placesRes = temp.filter(item => item.id !== node.id)
     handlePlacesCallback(placesRes)
     setOpen(true)
   }
@@ -45,9 +46,10 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
     setOpen(true)
     setModalHeading('')
     setShowChartInModal(true)
+    handleShowTableCallback(false)
   }
   return (
-    <div style={{ marginTop: 150, marginLeft: 9, position: 'relative' }}>
+    <div style={{ marginTop: 0, marginLeft: 9, position: 'relative' }}>
       <TableContainer sx={{ marginLeft: -0.50 }} >
         <Table sx={{ border: '2px solid black' }} aria-label="simple table" size='large'>
           <TableHead >
@@ -143,7 +145,7 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
                 // display: 'flex'
 
 
-              }}>{nodeData[0]?.noise}<span style={{ cursor: 'pointer', display: 'flex', marginTop: -30, paddingLeft: 50 }}><span style={{ margin: 0 }} className={nodeData[0]?.color} onClick={() => handleAlarmClick(nodeData[0])} ></span><IconButton onClick={handleChartIcon} sx={{ marginBottom: 2.5, paddingLeft: 2 }}><BarChartIcon /></IconButton></span></TableCell>
+              }}>{nodeData[0]?.noise}<span style={{ cursor: 'pointer', display: 'flex', marginTop: -30, paddingLeft: 50 }}><span style={{ margin: 0 }} className={nodeData[0]?.color} onClick={() => handleAlarmClick(nodeData[0])} ></span></span></TableCell>
             </TableRow>
 
             <TableRow>
@@ -176,7 +178,7 @@ export default function DashboardTableComp({ nodeData, places, handlePlacesCallb
 
           </TableBody>
         </Table>
-        {open && <PopUpModal open={open} handleCloseModal={handleCloseModal} modalHeading={modalHeading} showChartInModal={showChartInModal} />}
+        {/* {open && <PopUpModal open={open} handleCloseModal={handleCloseModal} modalHeading={modalHeading} showChartInModal={showChartInModal} />} */}
       </TableContainer >
     </div >
   )

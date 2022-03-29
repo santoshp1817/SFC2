@@ -23,6 +23,17 @@
 
 .chartHeading {
   display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  /* margin:90 */
+  border: 2px solid black;
+  border-bottom: none;
+  height:80;
+  padding: 11px;
+  background-color: lightBlue,
+}
+.chartHeading2 {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin:90

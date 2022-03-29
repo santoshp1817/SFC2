@@ -72,7 +72,7 @@ export default function SimpleMap({ value, geoDetails }) {
         ))
         }
       </GoogleMapReact>
-      <h3 style={{ display: 'flex', justifyContent: 'center' }}>Search & Select any FCM node to view its details</h3>
+      <h3 style={{ display: 'flex', justifyContent: 'center' }}></h3>
 
       {showTable && <BasicTable nodeData={nodeData} />}
     </>
